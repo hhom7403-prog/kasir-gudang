@@ -1,0 +1,1 @@
+<label class="block">Nama gudang<input name="nama_gudang" value="{{ old('nama_gudang', $gudang->nama_gudang ?? '') }}" class="border p-2 w-full" required></label><label class="block">Lokasi<input name="lokasi" value="{{ old('lokasi', $gudang->lokasi ?? '') }}" class="border p-2 w-full"></label>

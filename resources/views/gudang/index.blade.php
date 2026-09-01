@@ -1,0 +1,4 @@
+@extends('layouts.app')
+@section('content')
+<div class="max-w-7xl mx-auto p-6"><div class="flex justify-between mb-5"><h1 class="text-2xl font-bold">Gudang</h1><a href="{{ route('gudang.create') }}" class="bg-blue-600 text-white px-4 py-2">Tambah Gudang</a></div>@include('components.flash')<div class="bg-white shadow-sm"><table class="w-full text-left"><thead class="bg-slate-100"><tr><th class="p-3">Nama</th><th class="p-3">Lokasi</th><th class="p-3">Stok</th><th class="p-3">Aksi</th></tr></thead><tbody>@forelse($gudangs as $gudang)<tr class="border-t"><td class="p-3">{{ $gudang->nama_gudang }}</td><td class="p-3">{{ $gudang->lokasi ?: '-' }}</td><td class="p-3">{{ $gudang->stoks_count }}</td><td class="p-3"><a class="text-blue-600" href="{{ route('gudang.edit', $gudang) }}">Edit</a></td></tr>@empty<tr><td colspan="4" class="p-6 text-center">Belum ada gudang.</td></tr>@endforelse</tbody></table></div>{{ $gudangs->links() }}</div>
+@endsection

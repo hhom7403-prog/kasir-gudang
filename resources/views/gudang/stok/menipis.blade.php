@@ -1,0 +1,4 @@
+@extends('layouts.app')
+@section('content')
+<div class="max-w-7xl mx-auto p-6"><div class="flex justify-between items-center mb-5"><h1 class="text-2xl font-bold">Stok Menipis</h1><a href="{{ route('stok.index') }}" class="text-blue-600">Semua stok</a></div><div class="bg-white shadow-sm overflow-x-auto"><table class="w-full text-left"><thead class="bg-slate-100"><tr><th class="p-3">Produk</th><th class="p-3">Gudang</th><th class="p-3">Stok</th><th class="p-3">Minimum</th></tr></thead><tbody>@forelse($stoks as $stok)<tr class="border-t"><td class="p-3">{{ $stok->produk->nama_produk }}</td><td class="p-3">{{ $stok->gudang->nama_gudang }}</td><td class="p-3 text-red-600 font-bold">{{ $stok->jumlah_stok }}</td><td class="p-3">{{ $stok->stok_minimum }}</td></tr>@empty<tr><td colspan="4" class="p-6 text-center">Semua stok aman.</td></tr>@endforelse</tbody></table></div></div>
+@endsection
